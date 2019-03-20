@@ -1,0 +1,26 @@
+<html>
+    <body bgcolor="
+#FFA07A">
+        <hr><br>
+            <h1 style="color:rgb(42, 1, 95);">Página Inicial</h1>
+            <br>
+            <form action = exibir_mensagem> Nome: <input type = text>
+                <input type = submit value = Cadastrar>
+                <h2>{{Nome}}</h2>
+            </form>
+        <br><hr><br>
+            <form action = exibir_mensagem> Pessoa a ser removida: <input type = text>
+                <input type = submit value = Remover>
+            </form>
+        <br><hr><br>
+            <form action = exibir_mensagem> Nome anterior da pessoa: <input type = text><br><br> Nome novo da pessoa: <input type = text>
+                <input type = submit value = Atualizar> 
+            </form>
+        <br><hr><br>
+            <a href="/easter">Easter Egg</a>
+        <br><br><br>
+        {% for i in lista: %}
+        <h3> {{i}} </h3>
+        {% endfor %}
+    </body>
+</html>
