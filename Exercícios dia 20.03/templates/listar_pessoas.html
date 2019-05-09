@@ -1,0 +1,16 @@
+<html> 
+    <body>
+            <a href="/"><h1>Voltar para a página anterior</h1></a>
+            <br><br><br><br>
+            <h1>Pessoas</h1>
+            {% for p in lista: %}
+            <h3>{{p}}
+                {% if session["usuario"] %}
+                    <a href= "/excluir_pessoa?nome={{p[0]}}"> XXXXX </a>
+                    <a href= "/form_alterar_pessoa?nome={{p[0]}}">
+                        <img src = "/static/lapis.png" width= 20px height= 20px > </a> </h3>
+                        {% endif %}
+            {% endfor %}
+
+    </body>
+</html>

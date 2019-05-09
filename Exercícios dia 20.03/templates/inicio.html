@@ -3,24 +3,31 @@
 #FFA07A">
         <hr><br>
             <h1 style="color:rgb(42, 1, 95);">Página Inicial</h1>
-            <br>
-            <form action = exibir_mensagem> Nome: <input type = text>
-                <input type = submit value = Cadastrar>
+            <hr><br>
+            {% if session ["usuario"] %}
+            Bem Vindo, {{ session["usuario"] }}
+              <a href= /logout> Sair </a>            
+            {% else %}
+            <a href+/form_login> Fazer Login</a>
+            {% endif %}
+            <br> <br>
+            <form action= /login method = post>
+                Login: <input type= text name= login>
+                Senha: <input type= password name= senha>
+                <button>Ok</button>
+            </form>
+            <hr><br><br><br>
+            <form action = /incluir_pessoa method = post> 
+                Nome: <input type = text name = nome><br>
+                Endereço: <textarea name = endereco></textarea><br>
+                Telefone: <input type = text name = telefone>
+                <input type = submit value = Incluir>
                 <h2>{{Nome}}</h2>
-            </form>
-        <br><hr><br>
-            <form action = exibir_mensagem> Pessoa a ser removida: <input type = text>
-                <input type = submit value = Remover>
-            </form>
-        <br><hr><br>
-            <form action = exibir_mensagem> Nome anterior da pessoa: <input type = text><br><br> Nome novo da pessoa: <input type = text>
-                <input type = submit value = Atualizar> 
             </form>
         <br><hr><br>
             <a href="/easter">Easter Egg</a>
         <br><br><br>
-        {% for i in lista: %}
-        <h3> {{i}} </h3>
-        {% endfor %}
+        <br>
+        <a href = /listar_pessoas>Listar</a>
     </body>
 </html>
