@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title of the document</title>
+  <link rel=stylesheet href=estilo.css /> <!-- conexão com uma folha de estilos -->
+</head>
+
+<body>
+  <div id=conteudo></div>
+  <hr>
+  Digite aqui o novo texto:
+  <input type=text id=novo>
+  <button id=alterar>Alterar</button>
+  <hr id=linha2>
+  <img id=mickey src=mickey.png height=128>
+</body>
+
+<!-- importação da biblioteca jquery, diretamente do site do jquery -->
+<script src=https://code.jquery.com/jquery-3.4.1.min.js> </script> 
+
+<! -- início do script personalizado -->
+<script>
+  // queremos colocar algum texto no interior da div
+  $('#conteudo').html("Olá, este conteúdo foi inserido por javascript " +
+    "com uso de jquery. Clique no <span id = 'teste'>mickey!</span>");
+
+  // quando clicar no botão, o que acontecerá?
+  $("#alterar").click(function () {
+
+    // pega o conteúdo que está na caixa de texto
+    var digitado = $('#novo').val();
+
+    // coloca esse novo texto na div
+    $('#conteudo').text(digitado);
+  });
+
+  // quando clicar no mickey, ele e uma linha irão desaparecer
+  $("#mickey").click(function () {
+    $(this).fadeOut(1000);
+    $("#linha2").fadeOut(1000);
+  });
+
+  $("#teste").click(function () {
+    $("#mickey").fadeIn(1000);
+    $("#linha2").fadeIn(1000);
+  });
+
+
+
+</script>
+
+</html>
